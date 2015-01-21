@@ -12,7 +12,10 @@ mkdir ~/robot2020/src
 cd ~/robot2020/src
 git clone -b hydro-devel https://github.com/bosch-ros-pkg/robot2020.git
 git clone -b bosch_robot_devel https://github.com/bosch-ros-pkg/navigation.git
-#git clone -b hydro-devel https://github.com/bosch-ros-pkg/urg_node.git
+git clone -b indigo-devel https://github.com/bosch-ros-pkg/urg_node.git
+git clone -b master https://github.com/RobotWebTools/mjpeg_server.git
+git clone https://github.com/turtlebot/turtlebot.git
+git clone https://github.com/WPI-RAIL/robot_pose_publisher.git
 cd ~/robot2020
 rosdep install --from-paths src --ignore-src --rosdistro indigo -y
 catkin_make
