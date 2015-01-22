@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 sudo apt-get install git emacs vim wget gparted
+#http://serverfault.com/questions/545622/no-more-logging-after-upgrade-to-debian-wheezy
+sudo apt-get install inetutils-syslogd
 
 #Setup sources.list
 sudo sh -c 'echo "\ndeb http://ports.ubuntu.com/ubuntu-ports/ trusty restricted" >> /etc/apt/sources.list'
