@@ -1,0 +1,36 @@
+#rcon
+
+- git: {local-name: rocon, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon.git'}
+- git: {local-name: rocon_concert, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_concert.git'}
+- git: {local-name: rocon_multimaster, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_multimaster.git'}
+- git: {local-name: rocon_msgs, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_msgs.git'}
+- git: {local-name: rocon_tools, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_tools.git'}
+- git: {local-name: rocon_app_platform, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_app_platform.git'}
+- git: {local-name: rocon_tutorials, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_tutorials.git'}
+- git: {local-name: concert_services, version: indigo, uri: 'https://github.com/robotics-in-concert/concert_services.git'}
+- git: {local-name: concert_software_farm, version: indigo, uri: 'https://github.com/robotics-in-concert/concert_software_farm.git'}
+- git: {local-name: rocon_qt_gui, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_qt_gui.git'}
+
+- git: {local-name: concert_scheduling, version: master, uri: 'https://github.com/robotics-in-concert/concert_scheduling.git'}
+- git: {local-name: std_capabilities, version: initial_specs, uri: 'https://github.com/robotics-in-concert/std_capabilities.git'}
+- git: {local-name: rqt_capabilities, version: master, uri: 'https://github.com/robotics-in-concert/rqt_capabilities.git'}
+
+# Experimental
+#- git: {local-name: rocon_rapps, version: indigo, uri: 'https://github.com/robotics-in-concert/rocon_rapps.git'}
+
+
+# Kobuki / Yujin stacks
+
+- git: {local-name: yocs_msgs, version: indigo, uri: 'https://github.com/yujinrobot/yocs_msgs.git'}
+- git: {local-name: yujin_ocs, version: indigo, uri: 'https://github.com/yujinrobot/yujin_ocs.git'}
+- git: {local-name: kobuki_msgs, version: indigo, uri: 'https://github.com/yujinrobot/kobuki_msgs.git'}
+- git: {local-name: kobuki_core, version: indigo, uri: 'https://github.com/yujinrobot/kobuki_core.git'}
+- git: {local-name: kobuki, version: indigo, uri: 'https://github.com/yujinrobot/kobuki.git'}
+
+
+# Turtlebot / Yujin stacks
+
+- git: {local-name: turtlebot_msgs, version: indigo, uri: 'https://github.com/turtlebot/turtlebot_msgs.git'}
+- git: {local-name: turtlebot_create, version: indigo, uri: 'https://github.com/turtlebot/turtlebot_create.git'}
+- git: {local-name: turtlebot, version: indigo, uri: 'https://github.com/turtlebot/turtlebot.git'}
+- git: {local-name: turtlebot_apps, version: indigo, uri: 'https://github.com/turtlebot/turtlebot_apps.git'}
