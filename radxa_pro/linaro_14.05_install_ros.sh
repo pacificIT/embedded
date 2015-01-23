@@ -7,6 +7,7 @@ sudo apt-get -y install inetutils-syslogd
 #Enable CDC ACM for Hokuyo, Arduino, etc...
 sudo cp cdc-acm.ko /lib/modules/3.0.36+/kernel/drivers/usb/serial/
 sudo sh -c 'echo "cdc_acm" > /etc/modules-load.d/cdc_acm.conf'
+sudo depmod -a
 sudo modprobe cdc_acm
 
 #Setup sources.list
