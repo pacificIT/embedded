@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
-sudo apt-get install git emacs
-sudo apt-get install wget 
+sudo apt-get -y install git emacs
+sudo apt-get -y install wget 
 
 #Setup sources.list
 sudo sh -c 'echo "\ndeb http://ports.ubuntu.com/ubuntu-ports/ trusty restricted" >> /etc/apt/sources.list'
@@ -18,19 +18,19 @@ wget http://packages.namniart.com/repos/namniart.key -O - | sudo apt-key add -
 
 #Install ROS bare-bones
 sudo apt-get update
-sudo apt-get install ros-indigo-ros-base
+sudo apt-get -y install ros-indigo-ros-base
 
 #Setup bashrc
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 #Install rosdep for compiled sources
-sudo apt-get install python-rosdep
+sudo apt-get -y install python-rosdep
 sudo rosdep init
 rosdep update
 
 #Install rosinstall
-sudo apt-get install python-rosinstall
+sudo apt-get -y install python-rosinstall
 cp /etc/lsb-release linaro_lsb-release
 
 #Update OS name
