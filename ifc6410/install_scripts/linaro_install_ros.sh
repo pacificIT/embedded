@@ -1,5 +1,6 @@
 #!/bin/bash
 set -x
+set -e
 sudo apt-get -y install git emacs
 sudo apt-get -y install wget 
 
