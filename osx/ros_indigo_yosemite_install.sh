@@ -2,11 +2,12 @@
 set -x
 set -e
 brew update
-brew install cmake
+brew install cmake python
 
 #### Added by Hai ####
 sudo pip install -U numpy
-brew install console_bridge poco eigen sip tinyxml qt pyqt curl gtest lz4 jpeg libpng fltk libtool yaml-cpp boost-python 
+brew install console_bridge poco eigen sip tinyxml qt pyqt curl lz4 jpeg libpng fltk libtool yaml-cpp boost-python 
+brew install https://github.com/ros/homebrew-deps/blob/master/gtest.rb
 
 #Fix for rviz: interactions between qt and boost.
 content=$(cat /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp)
