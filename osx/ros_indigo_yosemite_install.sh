@@ -1,5 +1,6 @@
 #! /bin/bash
 set -x
+set -e
 brew update
 brew install cmake
 
@@ -7,7 +8,7 @@ brew install cmake
 sudo pip install -U numpy
 brew install console_bridge poco eigen sip tinyxml qt pyqt curl gtest lz4 jpeg libpng fltk libtool yaml-cpp boost-python 
 # https://github.com/Homebrew/homebrew-science/issues/1624
-brew install https://github.com/fran6co/homebrew-science/raw/pcl-boost/pcl.rb
+brew install https://raw.githubusercontent.com/fran6co/homebrew-science/8e028c29a305d20ea738e2c03daac69f3a6eb2dc/pcl.rb
 brew install opencv urdfdom urdfdom_headers qhull assimp collada-dom 
 brew install Caskroom/cask/xquartz
 brew install gtk+ gtk+3 openni2 gazebo4 libogg theora shiboken pyside 
