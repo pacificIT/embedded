@@ -6,7 +6,8 @@ brew tap osrf/simulation
 brew tap homebrew/versions 
 brew tap homebrew/science
 brew update
-brew install cmake python
+brew install cmake
+brew uninstall python
 
 mkdir -p ~/Library/Python/2.7/lib/python/site-packages
 echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
@@ -20,11 +21,11 @@ sudo pip install empy
 
 
 #### Added by Hai ####
-brew install console_bridge poco eigen sip tinyxml qt pyqt curl lz4 gtest jpeg libpng fltk libtool yaml-cpp boost-python 
+brew install console_bridge poco eigen sip tinyxml qt qt5 pyqt curl lz4 gtest jpeg libpng fltk libtool yaml-cpp boost-python 
 #Fix for rviz: interactions between qt and boost. Also fix for PCL.
 content=$(cat /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp)
 echo -en "#ifndef Q_MOC_RUN\n$content" > /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
-echo "#endif" >> /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
+echo "\n#endif" >> /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
 
 # https://github.com/Homebrew/homebrew-science/issues/1624
 brew install https://raw.githubusercontent.com/fran6co/homebrew-science/8e028c29a305d20ea738e2c03daac69f3a6eb2dc/pcl.rb
