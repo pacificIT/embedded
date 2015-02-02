@@ -5,15 +5,23 @@ brew tap ros/deps
 brew tap osrf/simulation
 brew tap homebrew/versions 
 brew tap homebrew/science
-
-brew install cmake python
 brew update
 
-#### Added by Hai ####
+mkdir -p ~/Library/Python/2.7/lib/python/site-packages
+echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+sudo easy_install pip
 sudo pip install -U numpy
-brew install console_bridge poco eigen sip tinyxml qt pyqt curl lz4 gtest jpeg libpng fltk libtool yaml-cpp boost-python 
+sudo pip install -U setuptools
+sudo pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg Distribute sphinx
+#### Added by Hai ####
+sudo pip install empy
+#### Added by Hai ####
 
-#Fix for rviz: interactions between qt and boost.
+
+#### Added by Hai ####
+brew install cmake python
+brew install console_bridge poco eigen sip tinyxml qt pyqt curl lz4 gtest jpeg libpng fltk libtool yaml-cpp boost-python 
+#Fix for rviz: interactions between qt and boost. Also fix for PCL.
 content=$(cat /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp)
 echo -en "#ifndef Q_MOC_RUN\n$content" > /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
 echo "#endif" >> /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
@@ -25,21 +33,8 @@ brew install Caskroom/cask/xquartz
 brew install gtk+ gtk+3 openni2 gazebo4 libogg theora shiboken pyside 
 #### Added by Hai ####
 
-
-mkdir -p ~/Library/Python/2.7/lib/python/site-packages
-echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
-sudo easy_install pip
-sudo pip install -U setuptools
-sudo pip install -U wstool rosdep rosinstall rosinstall_generator
-rospkg catkin-pkg Distribute sphinx
-
-#### Added by Hai ####
-sudo pip install empy
-#### Added by Hai ####
-
 sudo rosdep init
 rosdep update
-
 mkdir ~/ros_catkin_ws
 cd ~/ros_catkin_ws
 rosinstall_generator desktop_full --rosdistro indigo --deps --wet-only --tar > indigo-desktop-full-wet.rosinstall
@@ -75,6 +70,7 @@ mv -f rviz_cylinder.mesh src/rviz/ogre_media/models/
 wget https://github.com/ros-visualization/rviz/raw/99128d434adfd1bb72f1be8db00ded0364bbb7b2/ogre_media/models/rviz_sphere.mesh
 mv -f rviz_sphere.mesh src/rviz/ogre_media/models/
 #### Added by Hai ####
+
 ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release
 source ~/ros_catkin_ws/install_isolated/setup.bash
 echo "source ~/ros_catkin_ws/install_isolated/setup.bash" >> ~/.bashrc
