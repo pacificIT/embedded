@@ -1,13 +1,17 @@
 #! /bin/bash
 set -x
 set -e
-brew update
+brew tap ros/deps
+brew tap osrf/simulation
+brew tap homebrew/versions 
+brew tap homebrew/science
+
 brew install cmake python
+brew update
 
 #### Added by Hai ####
 sudo pip install -U numpy
-brew install console_bridge poco eigen sip tinyxml qt pyqt curl lz4 jpeg libpng fltk libtool yaml-cpp boost-python 
-brew install https://github.com/ros/homebrew-deps/blob/master/gtest.rb
+brew install console_bridge poco eigen sip tinyxml qt pyqt curl lz4 gtest jpeg libpng fltk libtool yaml-cpp boost-python 
 
 #Fix for rviz: interactions between qt and boost.
 content=$(cat /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp)
@@ -22,10 +26,6 @@ brew install gtk+ gtk+3 openni2 gazebo4 libogg theora shiboken pyside
 #### Added by Hai ####
 
 
-brew tap ros/deps
-brew tap osrf/simulation
-brew tap homebrew/versions 
-brew tap homebrew/science
 mkdir -p ~/Library/Python/2.7/lib/python/site-packages
 echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
 sudo easy_install pip
