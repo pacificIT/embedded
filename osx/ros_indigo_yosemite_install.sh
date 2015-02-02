@@ -6,6 +6,7 @@ brew tap osrf/simulation
 brew tap homebrew/versions 
 brew tap homebrew/science
 brew update
+brew install cmake python
 
 mkdir -p ~/Library/Python/2.7/lib/python/site-packages
 echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
@@ -19,7 +20,6 @@ sudo pip install empy
 
 
 #### Added by Hai ####
-brew install cmake python
 brew install console_bridge poco eigen sip tinyxml qt pyqt curl lz4 gtest jpeg libpng fltk libtool yaml-cpp boost-python 
 #Fix for rviz: interactions between qt and boost. Also fix for PCL.
 content=$(cat /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp)
