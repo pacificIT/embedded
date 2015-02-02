@@ -7,9 +7,10 @@ brew tap homebrew/versions
 brew tap homebrew/science
 brew update
 brew install cmake
+brew uninstall python
 
-#mkdir -p ~/Library/Python/2.7/lib/python/site-packages
-#echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+mkdir -p ~/Library/Python/2.7/lib/python/site-packages
+echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
 sudo easy_install pip
 sudo pip install -U numpy
 sudo pip install -U setuptools
