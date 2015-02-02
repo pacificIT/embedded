@@ -19,7 +19,6 @@ sudo pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-
 sudo pip install empy
 #### Added by Hai ####
 
-
 #### Added by Hai ####
 brew install console_bridge poco eigen sip tinyxml qt qt5 pyqt curl lz4 gtest jpeg libpng fltk libtool yaml-cpp boost-python 
 #Fix for rviz: interactions between qt and boost. Also fix for PCL.
@@ -37,8 +36,9 @@ brew install gtk+ gtk+3 openni2 gazebo4 libogg theora shiboken pyside
 sudo rosdep init
 rosdep update
 mkdir ~/ros_catkin_ws
+cp indigo-desktop-full-wet.rosinstall ~/ros_catkin_ws/
 cd ~/ros_catkin_ws
-rosinstall_generator desktop_full --rosdistro indigo --deps --wet-only --tar > indigo-desktop-full-wet.rosinstall
+#rosinstall_generator desktop_full --rosdistro indigo --deps --wet-only --tar > indigo-desktop-full-wet.rosinstall
 wstool init -j8 src indigo-desktop-full-wet.rosinstall
 rosdep install --from-paths src --ignore-src --rosdistro indigo -y
 
