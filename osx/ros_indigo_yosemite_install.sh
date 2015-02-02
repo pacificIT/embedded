@@ -7,6 +7,12 @@ brew install cmake
 #### Added by Hai ####
 sudo pip install -U numpy
 brew install console_bridge poco eigen sip tinyxml qt pyqt curl gtest lz4 jpeg libpng fltk libtool yaml-cpp boost-python 
+
+#Fix for rviz: interactions between qt and boost.
+content=$(cat /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp)
+echo -en "#ifndef Q_MOC_RUN\n$content" > /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
+echo "#endif" >> /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
+
 # https://github.com/Homebrew/homebrew-science/issues/1624
 brew install https://raw.githubusercontent.com/fran6co/homebrew-science/8e028c29a305d20ea738e2c03daac69f3a6eb2dc/pcl.rb
 brew install opencv urdfdom urdfdom_headers qhull assimp collada-dom 
@@ -47,11 +53,6 @@ mv -f CMakeLists.txt src/image_common/image_transport/
 #Fix for new version of openni2_camera CMake breaking OS X support
 wget https://raw.githubusercontent.com/ros-drivers/openni2_camera/5488b52720174cdd27c19c0481d71597b70d2a34/CMakeLists.txt
 mv -f CMakeLists.txt src/openni2_camera/
-
-#Fix for rviz: interactions between qt and boost.
-content=$(cat /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp)
-echo -en "#ifndef Q_MOC_RUN\n$content" > /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
-echo "#endif" >> /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hpp
 
 #Fix for rviz: assimp detection.
 wget https://raw.githubusercontent.com/ros-visualization/rviz/18b224543e6426f851667b828f62c864fa29816f/CMakeLists.txt
