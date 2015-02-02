@@ -6,7 +6,7 @@ brew tap osrf/simulation
 brew tap homebrew/versions 
 brew tap homebrew/science
 brew update
-brew install cmake python
+brew install cmake
 
 mkdir -p ~/Library/Python/2.7/lib/python/site-packages
 echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
