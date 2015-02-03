@@ -40,6 +40,7 @@ cp indigo-desktop-full-wet.rosinstall ~/ros_catkin_ws/
 cd ~/ros_catkin_ws
 #rosinstall_generator desktop_full --rosdistro indigo --deps --wet-only --tar > indigo-desktop-full-wet.rosinstall
 wstool init -j8 src indigo-desktop-full-wet.rosinstall
+brew unlink yaml-cpp
 rosdep install --from-paths src --ignore-src --rosdistro indigo -y
 
 #### Added by Hai ####
