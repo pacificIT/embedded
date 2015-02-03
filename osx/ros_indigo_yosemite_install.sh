@@ -30,7 +30,7 @@ echo "\n#endif" >> /usr/local/Cellar/boost/1.57.0/include/boost/type_traits/deta
 brew install https://raw.githubusercontent.com/fran6co/homebrew-science/8e028c29a305d20ea738e2c03daac69f3a6eb2dc/pcl.rb
 brew install opencv urdfdom urdfdom_headers qhull assimp collada-dom 
 brew install Caskroom/cask/xquartz
-brew install gtk+ gtk+3 openni2 gazebo4 libogg theora shiboken pyside 
+brew install gtk+ gtk+3 openni2 libogg theora shiboken pyside 
 #### Added by Hai ####
 
 sudo rosdep init
@@ -41,7 +41,8 @@ cd ~/ros_catkin_ws
 #rosinstall_generator desktop_full --rosdistro indigo --deps --wet-only --tar > indigo-desktop-full-wet.rosinstall
 wstool init -j8 src indigo-desktop-full-wet.rosinstall
 brew unlink yaml-cpp
-rosdep install --from-paths src --ignore-src --rosdistro indigo -y
+rosdep install --from-paths src --ignore-src --rosdistro indigo -y --skip-keys="libopenni2-dev gazebo"
+brew install gazebo4
 
 #### Added by Hai ####
 #Fix for bug https://github.com/ros-perception/image_common/issues/28
