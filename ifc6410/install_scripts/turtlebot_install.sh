@@ -5,6 +5,9 @@ set -e
 #Install turtlebot navigation and other ROS software
 sudo apt-get -y install ros-indigo-navigation ros-indigo-amcl ros-indigo-camera-calibration ros-indigo-calibration ros-indigo-clear-costmap-recovery ros-indigo-cv-bridge ros-indigo-dynamic-reconfigure ros-indigo-hokuyo-node ros-indigo-image-geometry ros-indigo-image-proc ros-indigo-image-view ros-indigo-joy ros-indigo-kobuki ros-indigo-kobuki-description ros-indigo-kobuki-auto-docking ros-indigo-kobuki-bumper2pc ros-indigo-kobuki-node ros-indigo-kobuki-rapps ros-indigo-laser-filters ros-indigo-libg2o ros-indigo-pcl-ros ros-indigo-rocon ros-indigo-rosbridge-server ros-indigo-sensor-msgs ros-indigo-turtlebot ros-indigo-usb-cam sudo ros-indigo-turtlebot-msgs ros-indigo-kobuki-dashboard ros-indigo-urg-c chrony
 
+#Install package for using a PS2 controller (to use with Lego Wheels)
+./install_qtsixa.sh
+
 #sync time to ubuntu.com
 sudo ntpdate ntp.ubuntu.com
 
