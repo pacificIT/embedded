@@ -10,10 +10,10 @@ sudo ntpdate ntp.ubuntu.com
 
 #download and install libjingle-dev
 #TODO: use apt-get once we have a repo for this (see https://github.com/ixirobot/webrtc-build/issues/3).
-libjingle_version=1.0.0
+libjingle_version=1b024da3debug
 libjingle_revision=1
 libjingle_arch=`dpkg --print-architecture`
-libjingle_pkg="libjingle-dev-${libjingle_version}-${libjingle_revision}_${libjingle_arch}.deb"
+libjingle_pkg="libjingle-dev_${libjingle_version}-${libjingle_revision}_${libjingle_arch}.deb"
 libjingle_url="https://s3-us-west-1.amazonaws.com/ai-libjingle-dev/${libjingle_pkg}"
 cd /tmp && curl -O ${libjingle_url}
 sudo dpkg -i "/tmp/${libjingle_pkg}"
