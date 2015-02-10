@@ -18,6 +18,9 @@ libjingle_url="https://s3-us-west-1.amazonaws.com/ai-libjingle-dev/${libjingle_p
 cd /tmp && curl -O ${libjingle_url}
 sudo dpkg -i "/tmp/${libjingle_pkg}"
 
+#download and install libtclap-dev
+sudo apt-get install libtclap-dev
+
 #download and install our code and source dependencies
 mkdir ~/robot2020
 cd ~/robot2020
