@@ -3,6 +3,7 @@ set -x
 set -e
 sudo apt-get -y install git emacs
 sudo apt-get -y install wget 
+sudo apt-get install python-software-properties #adds apt-add-repository command
 
 #Setup sources.list
 sudo sh -c 'echo "\ndeb http://ports.ubuntu.com/ubuntu-ports/ trusty restricted" >> /etc/apt/sources.list'
